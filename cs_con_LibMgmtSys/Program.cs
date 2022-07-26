@@ -203,11 +203,11 @@ namespace cs_con_LibMgmtSys
                 }
 
             }
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Let's Play It Again!!!");
-            Console.WriteLine();
+            Console.WriteLine(":::::::::::::::::::::::");
             Console.WriteLine();
             function();                            //For Continuously Running the Application 
         }

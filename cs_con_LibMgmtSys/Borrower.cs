@@ -28,7 +28,6 @@ namespace cs_con_LibMgmtSys
             borrow.borrowBookId = int.Parse(Console.ReadLine());
             Console.Write("Number of Books : ");
             borrow.BorrowBooksCount = int.Parse(Console.ReadLine());
-            Console.Write("Address :");
             borrow.BorrowDate = DateTime.Now;
             Console.WriteLine("Date - {0} and Time - {1}", borrow.BorrowDate.ToShortDateString(), borrow.BorrowDate.ToShortTimeString());
 

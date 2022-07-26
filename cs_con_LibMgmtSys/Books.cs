@@ -22,6 +22,7 @@ namespace cs_con_LibMgmtSys
             book.bookPrice = int.Parse(Console.ReadLine());
             Console.Write("Number of Books:");
             book.x = book.bookCount = int.Parse(Console.ReadLine());
+           
             Program.booklist.Add(book);
             Console.WriteLine($"Now, total number of books available is: {Program.booklist.Count}");
             foreach (Books b in Program.booklist)
