@@ -72,7 +72,7 @@ namespace cs_con_LibMgmtSys
             {
                 foreach (Books addReturnBookCount in Program.booklist)
                 {
-                    if (addReturnBookCount.x >= returnCount + addReturnBookCount.bookCount)
+                    if (addReturnBookCount.x <= returnCount + addReturnBookCount.bookCount)
                     {
                         if (addReturnBookCount.bookId == returnId)
                         {
@@ -150,7 +150,7 @@ namespace cs_con_LibMgmtSys
             {
                 foreach (Newspaper addReturnNewspaperCount in Program.newspaperlist)
                 {
-                    if (addReturnNewspaperCount.x >= returnCount + addReturnNewspaperCount.NewspaperCount)
+                    if (addReturnNewspaperCount.x <= returnCount + addReturnNewspaperCount.NewspaperCount)
                     {
                         if (addReturnNewspaperCount.NewspaperID == returnId)
                         {
