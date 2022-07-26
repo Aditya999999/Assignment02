@@ -139,7 +139,7 @@ namespace cs_con_LibMgmtSys
                     }
 
                 }
-                if (option1 == 2)
+                else if (option1 == 2)
                 {
                     Console.WriteLine("What do you want to select today?");
                     Console.WriteLine("\nMenu\n" +
@@ -204,6 +204,10 @@ namespace cs_con_LibMgmtSys
 
                     }
 
+                }
+                else 
+                {
+                    Console.WriteLine("Sorry, You have chosen wrong option, Please try again by carefully looking options..");
                 }
                 Thread.Sleep(2000);
                 Console.WriteLine();
