@@ -8,28 +8,28 @@ namespace cs_con_LibMgmtSys
     {
         public static List<Books> booklist = new List<Books>
         { 
-            new Books{bookName = "Apress", bookId = 01, bookPrice = 1000 },
-            new Books{bookName = "The Diary of a Young Girl", bookId = 02, bookPrice = 520 },
-            new Books{bookName = "To kill a MockingBird", bookId = 03, bookPrice = 410 },
-            new Books{bookName = "Where the sidewalks ends", bookId = 04, bookPrice = 234 },
-            new Books{bookName = "Valley of the dolls", bookId = 05, bookPrice = 276 },
-            new Books{bookName = "The Shining", bookId = 06, bookPrice = 143 },
-            new Books{bookName = "The Little Prince", bookId = 07, bookPrice = 134 },
-            new Books{bookName = "The Fellowship", bookId = 08, bookPrice = 545 },
-            new Books{bookName = "A wrinkle in Time", bookId = 09, bookPrice = 298 },
-            new Books{bookName = "Pride and Prejudice", bookId = 10, bookPrice = 399 },
-            new Books{bookName = "Beloved", bookId = 11, bookPrice = 789 },
-            new Books{bookName = "In Cold Blood", bookId = 12, bookPrice = 344 }
+            new Books{bookName = "Apress", bookId = 01, bookPrice = 1000, bookCount= 3 },
+            new Books{bookName = "The Diary of a Young Girl", bookId = 02, bookPrice = 520, bookCount= 2 },
+            new Books{bookName = "To kill a MockingBird", bookId = 03, bookPrice = 410 , bookCount = 2},
+            new Books{bookName = "Where the sidewalks ends", bookId = 04, bookPrice = 234 , bookCount = 4},
+            new Books{bookName = "Valley of the dolls", bookId = 05, bookPrice = 276 , bookCount = 3},
+            new Books{bookName = "The Shining", bookId = 06, bookPrice = 143 , bookCount = 2},
+            new Books{bookName = "The Little Prince", bookId = 07, bookPrice = 134 , bookCount = 2},
+            new Books{bookName = "The Fellowship", bookId = 08, bookPrice = 545 , bookCount = 6},
+            new Books{bookName = "A wrinkle in Time", bookId = 09, bookPrice = 298 , bookCount = 3},
+            new Books{bookName = "Pride and Prejudice", bookId = 10, bookPrice = 399 , bookCount = 2},
+            new Books{bookName = "Beloved", bookId = 11, bookPrice = 789 , bookCount = 4},
+            new Books{bookName = "In Cold Blood", bookId = 12, bookPrice = 344 , bookCount = 5}
 
 
         };
         public static List<Newspaper> newspaperlist = new List<Newspaper> 
         {
-           new Newspaper{NewspaperName = "DainikJagran", NewspaperID = 01, NewspaperPrice = 5 },
-           new Newspaper{NewspaperName = "AmarUjala", NewspaperID = 02, NewspaperPrice = 4 },
-           new Newspaper{NewspaperName = "TheTimesOfIndia", NewspaperID = 03, NewspaperPrice = 10 },
-           new Newspaper{NewspaperName = "TheHindu", NewspaperID = 04, NewspaperPrice = 10 },
-           new Newspaper{NewspaperName = "IndianExpress", NewspaperID = 05, NewspaperPrice = 10 }
+           new Newspaper{NewspaperName = "DainikJagran", NewspaperID = 01, NewspaperPrice = 5 , NewspaperCount = 5 },
+           new Newspaper{NewspaperName = "AmarUjala", NewspaperID = 02, NewspaperPrice = 4 , NewspaperCount = 5},
+           new Newspaper{NewspaperName = "TheTimesOfIndia", NewspaperID = 03, NewspaperPrice = 10 , NewspaperCount = 4},
+           new Newspaper{NewspaperName = "TheHindu", NewspaperID = 04, NewspaperPrice = 10 , NewspaperCount = 5},
+           new Newspaper{NewspaperName = "IndianExpress", NewspaperID = 05, NewspaperPrice = 10 , NewspaperCount = 4}
         };
 
         public static List<Borrower> borrowerslist = new List<Borrower>();

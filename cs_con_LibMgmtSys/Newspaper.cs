@@ -27,7 +27,7 @@ namespace cs_con_LibMgmtSys
             Console.WriteLine($"Now, total number of Newspapers available is: {Program.newspaperlist.Count}");
             foreach (Newspaper N in Program.newspaperlist)
             {
-                Console.WriteLine("ID- {0}   Name- {1, -25}   Price- {2}", N.NewspaperID, N.NewspaperName, N.NewspaperPrice);
+                Console.WriteLine("ID- {0}   Name- {1, -25}   Price- {2}   Count = {3}", N.NewspaperID, N.NewspaperName, N.NewspaperPrice, N.NewspaperCount);
             }
         }
         public static void RemoveNewspaper()
@@ -44,7 +44,7 @@ namespace cs_con_LibMgmtSys
                 Console.WriteLine("Newspaper collection :");
                 foreach (Newspaper N in Program.newspaperlist)
                 {
-                    Console.WriteLine("ID- {0}   Name- {1, -25}   Price- {2}", N.NewspaperID, N.NewspaperName, N.NewspaperPrice);
+                    Console.WriteLine("ID- {0}   Name- {1, -25}   Price- {2}   Count- {3}", N.NewspaperID, N.NewspaperName, N.NewspaperPrice, N.NewspaperCount);
                 }
             }
             else
@@ -88,7 +88,7 @@ namespace cs_con_LibMgmtSys
             {
                 foreach (Newspaper N in Program.newspaperlist)
                 {
-                    Console.WriteLine("ID- {0}   Name- {1, -25}   Price- {2}", N.NewspaperID, N.NewspaperName, N.NewspaperPrice);
+                    Console.WriteLine("ID- {0, -10}   Name- {1, -25}   Price- {2}   Count- {3, -15}", N.NewspaperID, N.NewspaperName, N.NewspaperPrice, N.NewspaperCount);
                 }
             }
         }

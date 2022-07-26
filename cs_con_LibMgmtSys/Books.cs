@@ -26,7 +26,7 @@ namespace cs_con_LibMgmtSys
             Console.WriteLine($"Now, total number of books available is: {Program.booklist.Count}");
             foreach (Books b in Program.booklist)
             {
-                Console.WriteLine("ID- {0}   Name- {1, -25}   Price- {2}", b.bookId, b.bookName, b.bookPrice);
+                Console.WriteLine("ID- {0, -10}   Name- {1, -25}   Price- {2} Count- {3, -25}", b.bookId, b.bookName, b.bookPrice, b.bookCount);
             }
         }
         public static void RemoveBook()
@@ -43,7 +43,7 @@ namespace cs_con_LibMgmtSys
                 Console.WriteLine("Now, Collection of Books remains: ");
                 foreach (Books b in Program.booklist)
                 {
-                    Console.WriteLine("ID- {0}   Name- {1, -25}   Price- {2}", b.bookId, b.bookName, b.bookPrice);
+                    Console.WriteLine("ID- {0, -10}   Name- {1, -25}   Price- {2} Count- {3, -10}", b.bookId, b.bookName, b.bookPrice, b.bookCount);
                 }
             }
             else
@@ -87,7 +87,7 @@ namespace cs_con_LibMgmtSys
             {
                 foreach (Books b in Program.booklist)
                 {
-                    Console.WriteLine("ID- {0}   Name- {1, -25}   Price- {2}", b.bookId, b.bookName, b.bookPrice);
+                    Console.WriteLine("ID- {0, -10}   Name- {1, -25}   Price- {2}   Count - {3, -25}", b.bookId, b.bookName, b.bookPrice, b.bookCount);
                 }
             }
         }
