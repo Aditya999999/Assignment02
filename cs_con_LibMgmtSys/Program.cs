@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace cs_con_LibMgmtSys
 {
@@ -39,11 +40,14 @@ namespace cs_con_LibMgmtSys
         static Newspaper newspaper = new Newspaper();
         static void Main(string[] args)
         {
-            Console.WriteLine("---------LIBRARY MANAGEMENT SYSTEM---------");
+            Console.WriteLine("-------------------------------------------");
+            Console.WriteLine("   Welcome To Library Management System    ");
+            Console.WriteLine("-------------------------------------------\n");
             Console.WriteLine("Are you a: ");
             Console.WriteLine("\nMenu\n"
                 + "1) Librarian\n"
                 + "2) Borrower");
+            Console.WriteLine();
             Console.WriteLine("Choose option from menu");
             int option1 = int.Parse(Console.ReadLine());
             if (option1 == 1)
@@ -52,6 +56,7 @@ namespace cs_con_LibMgmtSys
                 Console.WriteLine("\nMenu\n" +
                                     "1) Book \n" +
                                     "2) Newspaper");
+                Console.WriteLine();
                 Console.WriteLine("Choose option from menu");
                 int option2 = int.Parse(Console.ReadLine());
                 if (option2 == 1) 
@@ -62,6 +67,7 @@ namespace cs_con_LibMgmtSys
                                     "3) Search Book\n" +
                                     "4) View the list of all books in the library\n" +
                                     "5) View BorrowersList");
+                    Console.WriteLine();
                     Console.WriteLine("Choose option from menu");
                     int option3 = int.Parse (Console.ReadLine());
                     if (option3 == 1)
@@ -100,6 +106,7 @@ namespace cs_con_LibMgmtSys
                                     "3) Search Newspaper\n" +
                                     "4) View the list of all Newspapers in the library\n" +
                                     "5) View Borrower's Details");
+                    Console.WriteLine();
                     Console.WriteLine("Choose option from menu");
                     int option3 = int.Parse(Console.ReadLine());
                     if (option3 == 1)
@@ -136,6 +143,7 @@ namespace cs_con_LibMgmtSys
                 Console.WriteLine("\nMenu\n" +
                                     "1) Book \n" +
                                     "2) Newspaper");
+                Console.WriteLine();
                 Console.WriteLine("Choose option from menu");
                 int option2 = int.Parse(Console.ReadLine());
                 if (option2 == 1)
@@ -144,6 +152,7 @@ namespace cs_con_LibMgmtSys
                                     "1) Submit Book \n" +
                                     "2) Borrow Book\n" +
                                     "3) View the list of all books in the library");
+                    Console.WriteLine();
                     Console.WriteLine("Choose option from menu");
                     int option3 = int.Parse(Console.ReadLine());
                     if (option3 == 1)
@@ -171,6 +180,7 @@ namespace cs_con_LibMgmtSys
                                     "1) Borrow Newspaper \n" +
                                     "2) Return Newspaper\n" +
                                     "3) View the list of all Newspapers in the library");
+                    Console.WriteLine();
                     Console.WriteLine("Choose option from menu");
                     int option3 = int.Parse(Console.ReadLine());
                     if (option3 == 1)
@@ -193,6 +203,7 @@ namespace cs_con_LibMgmtSys
                 }
 
             }
+            Thread.Sleep(3000);
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Let's Play It Again!!!");
