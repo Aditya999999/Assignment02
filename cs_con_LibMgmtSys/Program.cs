@@ -5,32 +5,9 @@ using System.Threading;
 namespace cs_con_LibMgmtSys
 {
     class Program
+
     {
-        public static List<Books> booklist = new List<Books>
-        { 
-            new Books{bookName = "Apress", bookId = 01, bookPrice = 1000, bookCount= 3 },
-            new Books{bookName = "The Diary of a Young Girl", bookId = 02, bookPrice = 520, bookCount= 2 },
-            new Books{bookName = "To kill a MockingBird", bookId = 03, bookPrice = 410 , bookCount = 2},
-            new Books{bookName = "Where the sidewalks ends", bookId = 04, bookPrice = 234 , bookCount = 4},
-            new Books{bookName = "Valley of the dolls", bookId = 05, bookPrice = 276 , bookCount = 3},
-            new Books{bookName = "The Shining", bookId = 06, bookPrice = 143 , bookCount = 2},
-            new Books{bookName = "The Little Prince", bookId = 07, bookPrice = 134 , bookCount = 2},
-            new Books{bookName = "The Fellowship", bookId = 08, bookPrice = 545 , bookCount = 6},
-            new Books{bookName = "A wrinkle in Time", bookId = 09, bookPrice = 298 , bookCount = 3},
-            new Books{bookName = "Pride and Prejudice", bookId = 10, bookPrice = 399 , bookCount = 2},
-            new Books{bookName = "Beloved", bookId = 11, bookPrice = 789 , bookCount = 4},
-            new Books{bookName = "In Cold Blood", bookId = 12, bookPrice = 344 , bookCount = 5}
 
-
-        };
-        public static List<Newspaper> newspaperlist = new List<Newspaper> 
-        {
-           new Newspaper{NewspaperName = "DainikJagran", NewspaperID = 01, NewspaperPrice = 5 , NewspaperCount = 5 },
-           new Newspaper{NewspaperName = "AmarUjala", NewspaperID = 02, NewspaperPrice = 4 , NewspaperCount = 5},
-           new Newspaper{NewspaperName = "TheTimesOfIndia", NewspaperID = 03, NewspaperPrice = 10 , NewspaperCount = 4},
-           new Newspaper{NewspaperName = "TheHindu", NewspaperID = 04, NewspaperPrice = 10 , NewspaperCount = 5},
-           new Newspaper{NewspaperName = "IndianExpress", NewspaperID = 05, NewspaperPrice = 10 , NewspaperCount = 4}
-        };
 
         public static List<Borrower> borrowerslist = new List<Borrower>();
         
@@ -40,10 +17,12 @@ namespace cs_con_LibMgmtSys
         static Newspaper newspaper = new Newspaper();
         static void Main(string[] args)
         {
+            Library library = new Library("Social Club");
+           
             while (true)
             {
                 Console.WriteLine("-------------------------------------------");
-                Console.WriteLine("   Welcome To Library Management System    ");
+                library.DisplayLibraryItems();
                 Console.WriteLine("-------------------------------------------\n");
                 Console.WriteLine("Are you a: ");
                 Console.WriteLine("\nMenu\n"
@@ -75,12 +54,16 @@ namespace cs_con_LibMgmtSys
                         if (option3 == 1)
                         {
                             Books.AddBook();
+                            Console.WriteLine("Your Book is Added Successfully!!!\n It can seen above in BookList.\n");
+                            
 
                         }
 
                         else if (option3 == 2)
                         {
                             Books.RemoveBook();
+                            Console.WriteLine("Your Book is Removed Successfully!!!\n It can seen above in BookList.\n");
+                            
                         }
                         else if (option3 == 3)
                         {

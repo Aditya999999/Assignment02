@@ -6,28 +6,41 @@ namespace cs_con_LibMgmtSys
 {
     public class Books
     {
-        public int bookId;
-        public string bookName;
-        public int bookCount;
-        public int bookPrice;
-        public int x;
+        public int BookId;
+        public string BookName;
+        public int NumCopies;
+        public int BookPrice;
+        public int Num;
+        public string Authors;
+
+
+
+
+
+
+        
+
+
 
         public static void AddBook()
         {
             Books book = new Books();
-            Console.WriteLine("Book Id:{0}", book.bookId = Program.booklist.Count + 1);
+            Console.WriteLine("Book Id:{0}", book.BookId = Library.booklist.Count + 1);
             Console.Write("Book Name:");
-            book.bookName = Console.ReadLine();
+            book.BookName = Console.ReadLine();
             Console.Write("Book Price:");
-            book.bookPrice = int.Parse(Console.ReadLine());
+            book.BookPrice = int.Parse(Console.ReadLine());
             Console.Write("Number of Books:");
-            book.x = book.bookCount = int.Parse(Console.ReadLine());
+            book.Num = book.NumCopies = int.Parse(Console.ReadLine());
+            Console.Write("Author: ");
+            book.Authors = Console.ReadLine();
+            
            
-            Program.booklist.Add(book);
-            Console.WriteLine($"Now, total number of books available is: {Program.booklist.Count}");
-            foreach (Books b in Program.booklist)
+            Library.booklist.Add(book);
+            Console.WriteLine($"Now, total number of books available is: {Library.booklist.Count}");
+            foreach (Books b in Library.booklist)
             {
-                Console.WriteLine("ID- {0, -10}   Name- {1, -25}   Price- {2} Count- {3, -25}", b.bookId, b.bookName, b.bookPrice, b.bookCount);
+                Console.WriteLine("ID- {0, -10}   Name- {1, -25}   Price- {2, -15} Count- {3, -15} Author(s)- {4, -10} ", b.BookId, b.BookName, b.BookPrice, b.NumCopies, b.Authors);
             }
         }
         public static void RemoveBook()
@@ -37,14 +50,14 @@ namespace cs_con_LibMgmtSys
 
             int Del = int.Parse(Console.ReadLine());
 
-            if (Program.booklist.Exists(x => x.bookId == Del))
+            if (Library.booklist.Exists(Num => Num.BookId == Del))
             {
-                Program.booklist.RemoveAt(Del - 1);
+                Library.booklist.RemoveAt(Del - 1);
                 Console.WriteLine("Book id - {0} has been deleted", Del);
                 Console.WriteLine("Now, Collection of Books remains: ");
-                foreach (Books b in Program.booklist)
+                foreach (Books b in Library.booklist)
                 {
-                    Console.WriteLine("ID- {0, -10}   Name- {1, -25}   Price- {2} Count- {3, -10}", b.bookId, b.bookName, b.bookPrice, b.bookCount);
+                    Console.WriteLine("ID- {0, -10}   Name- {1, -25}   Price- {2} Count- {3, -10} Author(s)- {4, -10}", b.BookId, b.BookName, b.BookPrice, b.NumCopies, b.Authors);
                 }
             }
             else
@@ -52,7 +65,15 @@ namespace cs_con_LibMgmtSys
                 Console.WriteLine("Invalid Book id");
             }
 
-            Program.booklist.Add(book);
+            Library.booklist.Add(book);
+        }
+        public override string ToString()
+        {
+            return $"Book Title: {this.BookName}\n"
+                   + $"Book ID: {this.BookId}\n"
+                   + $"Book Price: {this.BookPrice}\n"
+                   + $"Number of Copies: {this.NumCopies}\n"
+                   + $"Author(s): {string.Join(", ", this.Authors)}";
         }
         public static void SearchBook()
         {
@@ -60,16 +81,16 @@ namespace cs_con_LibMgmtSys
             Console.Write("Search by Book id :");
             int find = int.Parse(Console.ReadLine());
 
-            if (Program.booklist.Exists(x => x.bookId == find))
+            if (Library.booklist.Exists(num => num.BookId == find))
             {
-                foreach (Books searchId in Program.booklist)
+                foreach (Books searchId in Library.booklist)
                 {
-                    if (searchId.bookId == find)
+                    if (searchId.BookId == find)
                     {
                         Console.WriteLine("Book id :{0}\n" +
                         "Book name :{1}\n" +
                         "Book price :{2}\n" +
-                        "Book Count :{3}", searchId.bookId, searchId.bookName, searchId.bookPrice, searchId.bookCount);
+                        "Book Copies :{3}", searchId.BookId, searchId.BookName, searchId.BookPrice, searchId.NumCopies);
                     }
                 }
             }
@@ -80,15 +101,17 @@ namespace cs_con_LibMgmtSys
         }
         public static void ViewTotalBooks()
         {
-            if (Program.booklist.Count == 0)
+            if (Library.booklist.Count == 0)
             {
                 Console.WriteLine("No Books available.");
             }
             else
             {
-                foreach (Books b in Program.booklist)
+                Console.WriteLine("=========================================================================================================");
+                foreach (Books b in Library.booklist)
                 {
-                    Console.WriteLine("ID- {0, -10}   Name- {1, -25}   Price- {2}   Count - {3, -25}", b.bookId, b.bookName, b.bookPrice, b.bookCount);
+                    Console.WriteLine("ID- {0, -10}   Name- {1, -20}   Price- {2, -25} Count- {3, -10}  Author(s)- {4, -10} ", b.BookId, b.BookName, b.BookPrice, b.NumCopies, b.Authors);
+
                 }
             }
         }

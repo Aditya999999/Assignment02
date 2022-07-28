@@ -31,21 +31,21 @@ namespace cs_con_LibMgmtSys
             borrow.BorrowDate = DateTime.Now;
             Console.WriteLine("Date - {0} and Time - {1}", borrow.BorrowDate.ToShortDateString(), borrow.BorrowDate.ToShortTimeString());
 
-            if (Program.booklist.Exists(x => x.bookId == borrow.borrowBookId))
+            if (Library.booklist.Exists(x => x.BookId == borrow.borrowBookId))
             {
-                foreach (Books searchId in Program.booklist)
+                foreach (Books searchId in Library.booklist)
                 {
-                    if (searchId.bookCount >= searchId.bookCount - borrow.BorrowBooksCount && searchId.bookCount - borrow.BorrowBooksCount >= 0)
+                    if (searchId.NumCopies >= searchId.NumCopies - borrow.BorrowBooksCount && searchId.NumCopies - borrow.BorrowBooksCount >= 0)
                     {
-                        if (searchId.bookId == borrow.borrowBookId)
+                        if (searchId.BookId == borrow.borrowBookId)
                         {
-                            searchId.bookCount = searchId.bookCount - borrow.BorrowBooksCount;
+                            searchId.NumCopies = searchId.NumCopies - borrow.BorrowBooksCount;
                             break;
                         }
                     }
                     else
                     {
-                        Console.WriteLine("Only {0} books are found", searchId.bookCount);
+                        Console.WriteLine("Only {0} books are found", searchId.NumCopies);
                         break;
                     }
                 }
@@ -68,15 +68,15 @@ namespace cs_con_LibMgmtSys
             Console.Write("Number of Books:");
             int returnCount = int.Parse(Console.ReadLine());
 
-            if (Program.booklist.Exists(y => y.bookId == returnId))
+            if (Library.booklist.Exists(y => y.BookId == returnId))
             {
-                foreach (Books addReturnBookCount in Program.booklist)
+                foreach (Books addReturnBookCount in Library.booklist)
                 {
-                    if (addReturnBookCount.x <= returnCount + addReturnBookCount.bookCount)
+                    if (addReturnBookCount.Num <= returnCount + addReturnBookCount.NumCopies)
                     {
-                        if (addReturnBookCount.bookId == returnId)
+                        if (addReturnBookCount.BookId == returnId)
                         {
-                            addReturnBookCount.bookCount = addReturnBookCount.bookCount + returnCount;
+                            addReturnBookCount.NumCopies = addReturnBookCount.NumCopies + returnCount;
                             break;
                         }
                     }
@@ -109,9 +109,9 @@ namespace cs_con_LibMgmtSys
             borrow.BorrowDate = DateTime.Now;
             Console.WriteLine("Date - {0} and Time - {1}", borrow.BorrowDate.ToShortDateString(), borrow.BorrowDate.ToShortTimeString());
 
-            if (Program.newspaperlist.Exists(x => x.NewspaperID == borrow.borrowNewspaperId))
+            if (Library.newspaperlist.Exists(x => x.NewspaperID == borrow.borrowNewspaperId))
             {
-                foreach (Newspaper searchId in Program.newspaperlist)
+                foreach (Newspaper searchId in Library.newspaperlist)
                 {
                     if (searchId.NewspaperCount >= searchId.NewspaperCount - borrow.BorrowNewspaperCount && searchId.NewspaperCount - borrow.BorrowNewspaperCount >= 0)
                     {
@@ -146,9 +146,9 @@ namespace cs_con_LibMgmtSys
             Console.Write("Number of Newspaper:");
             int returnCount = int.Parse(Console.ReadLine());
 
-            if (Program.newspaperlist.Exists(y => y.NewspaperID == returnId))
+            if (Library.newspaperlist.Exists(y => y.NewspaperID == returnId))
             {
-                foreach (Newspaper addReturnNewspaperCount in Program.newspaperlist)
+                foreach (Newspaper addReturnNewspaperCount in Library.newspaperlist)
                 {
                     if (addReturnNewspaperCount.x <= returnCount + addReturnNewspaperCount.NewspaperCount)
                     {
