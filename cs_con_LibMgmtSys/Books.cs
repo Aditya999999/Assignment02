@@ -40,7 +40,7 @@ namespace cs_con_LibMgmtSys
             Console.WriteLine($"Now, total number of books available is: {Library.booklist.Count}");
             foreach (Books b in Library.booklist)
             {
-                Console.WriteLine("ID- {0, -10}   Name- {1, -25}   Price- {2, -15} Count- {3, -15} Author(s)- {4, -10} ", b.BookId, b.BookName, b.BookPrice, b.NumCopies, b.Authors);
+                Console.WriteLine("ID- {0, -10}   Name- {1, -25}   Price- {2, -10} Count- {3, -10}  Author(s)- {4, -10} ", b.BookId, b.BookName, b.BookPrice, b.NumCopies, b.Authors);
             }
         }
         public static void RemoveBook()
@@ -57,7 +57,7 @@ namespace cs_con_LibMgmtSys
                 Console.WriteLine("Now, Collection of Books remains: ");
                 foreach (Books b in Library.booklist)
                 {
-                    Console.WriteLine("ID- {0, -10}   Name- {1, -25}   Price- {2} Count- {3, -10} Author(s)- {4, -10}", b.BookId, b.BookName, b.BookPrice, b.NumCopies, b.Authors);
+                    Console.WriteLine("ID- {0, -10}   Name- {1, -25}   Price- {2, -10} Count- {3, -10}  Author(s)- {4, -10} ", b.BookId, b.BookName, b.BookPrice, b.NumCopies, b.Authors);
                 }
             }
             else
@@ -110,9 +110,10 @@ namespace cs_con_LibMgmtSys
                 Console.WriteLine("=========================================================================================================");
                 foreach (Books b in Library.booklist)
                 {
-                    Console.WriteLine("ID- {0, -10}   Name- {1, -20}   Price- {2, -25} Count- {3, -10}  Author(s)- {4, -10} ", b.BookId, b.BookName, b.BookPrice, b.NumCopies, b.Authors);
+                    Console.WriteLine("ID- {0, -10}   Name- {1, -25}   Price- {2, -10} Count- {3, -10}  Author(s)- {4, -10} ", b.BookId, b.BookName, b.BookPrice, b.NumCopies, b.Authors);
 
                 }
+                Console.WriteLine("=========================================================================================================");
             }
         }
     }
